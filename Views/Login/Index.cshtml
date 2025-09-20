@@ -7,6 +7,15 @@
         @TempData["MsgErro"]
     </div>
 }
+}
+@if (TempData["MsgErro"] != null)
+{
+    <div class="alert-success">
+        @TempData["MsgOk"]
+    </div>
+}
+
+
 
 @model Usuario
 
