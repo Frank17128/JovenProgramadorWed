@@ -31,13 +31,13 @@ namespace JovenProgramadorWed.Controllers
                 }
                 else
                 {
-                    TempData["MsgErro"] = "Usuário ou senha inválidos! Tente novamente...";
+                    TempData["MsgErro"] = "Usuário ou senha incorretos!!! Tente novamente...";
                 }
             }
             catch (Exception)
             {
 
-                TempData["MsgErro"] = "Usuário ou senha inválidos! Tente novamente...";
+                TempData["MsgErro"] = "Erro ao buscar dados do usuario";
             }
             return View("Index");
         }
@@ -55,7 +55,7 @@ namespace JovenProgramadorWed.Controllers
             {
                 _usuarioRepositorio.CadastrarUsuario(usuario);
 
-                TempData["MsgOk"] = "Usuario cadastrado com sucesseso!";
+                TempData["MsgOk"] = "Usuario cadastrado com sucesso!";
 
                 return RedirectToAction("Index", "Login");
             }

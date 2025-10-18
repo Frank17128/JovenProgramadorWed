@@ -24,6 +24,7 @@ namespace JovenProgramadorWed.Data.Mapiamento.Repositorio
             return _bancoContexto.Usuario.FirstOrDefault(x => x.Email == usuario.Email && x.Senha == usuario.Senha);
         }
 
+
        
     }
 }

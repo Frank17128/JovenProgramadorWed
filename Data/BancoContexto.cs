@@ -17,5 +17,17 @@ namespace JovenProgramadorWed.Data
         }
 
         public DbSet<Usuario> Usuario { get; set; }
+        public DbSet<Aluno> Aluno { get; set; }
     }
 }
+
+
+
+
+
+
+
+
+
+
+

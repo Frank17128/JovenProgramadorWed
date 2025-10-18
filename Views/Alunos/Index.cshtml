@@ -1,28 +1,40 @@
-﻿<table class="table">
-<thead>
-<tr>
-<th scope="col">Matricula</th>
-<th scope="col">Nome</th>
-<th scope="col">Cpf</th>
-<th scope="col">Data de Nacimento</th>
-</tr>
-</thead>
-<tbody>
- <tr>
-<td>111111</td>
-<td>AAAAA </td>
-<td>1212125</td>
-<td>
-<div class="d-grid gap-2 d-md-block">
-<a type="submit" class="btn btn-primary" role="button" asp-controller="Aluno" asp-action="Editar" >Editar</a>
-<a type="submit" class="btn btn-primary" role="button" asp-controller="Aluno" asp-action="Excluir" >Excluir</a>
-</div>
-</td>
-</tr>
-</tbody>
+﻿@model List<Aluno>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th scope="col">Matricula</th>
+			<th scope="col">Nome</th>
+			<th scope="col">Cpf</th>
+		</tr>
+	</thead>
+	<tbody>
+		@if (Model != null && Model.Any())
+		{
+
+			foreach (Aluno aluno in Model)
+			{
+
+				<tr>
+					<td>@aluno.Matricula </td>
+					<td>@aluno.Nome </td>
+					<td>@aluno.Cpf </td>
+					<td>@aluno.DataNascimento.ToShortDateString()</td>
+				    <td>
+				
+					    <div class="d-grid gap-2 d-md-block">
+                            <a type="submit" class="btn btn-primary" role="button" asp-controller="Aluno" asp-action="Editar" asp-route-id="@aluno.Codigo" >Editar</a>
+                            <a type="submit" class="btn btn-primary" role="button" asp-controller="Aluno" asp-action="Excluir" asp-route-id="@aluno.Codigo">Excluir</a>
+                        </div>
+                    </td>
+				</tr>
+			}
+		}
+
+	</tbody>
 </table>
 
-<div class="text-center">
-<a class="btn btn-primary" type="button" asp-controller="Aluno" asp-action="AdicionarAluno"> Adicionar Aluno</a>
-<a class="btn btn-primary" type="button" asp-controller="Home" asp-action="Index"> Voltar</a>
+<div class="text-center mt-3">
+	<a class="btn btn-success" asp-controller="Aluno" asp-action="AdicionarAluno">Adicionar Aluno</a>
+	<a class="btn btn-secondary" asp-controller="Home" asp-action="Index">Voltar</a>
 </div>

@@ -15,6 +15,7 @@ namespace JovenProgramadorWed.Data.Mapiamento
             builder.Property(t => t.Email).HasColumnType("varchar(50)");
             builder.Property(t => t.Senha).HasColumnType("varchar(50)");
 
+
         }
     }
 }
