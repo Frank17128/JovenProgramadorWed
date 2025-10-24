@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using JovenProgramadorWed.Data.Mapeamento.Repositorio.Interfaces;
+using JovenProgramadorWed.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace JovenProgramadorWed.Controllers
 {
@@ -42,10 +44,9 @@ namespace JovenProgramadorWed.Controllers
 
             return View("Index");
         }
-        public IActionResult Editar(int codigo)
+        public IActionResult Editar()
         {
-            var aluno = _alunoRepositorio.BuscarId(codigo);
-            return View(aluno);
+            return View();
         }
         public IActionResult EditarAluno(Aluno aluno)
         {

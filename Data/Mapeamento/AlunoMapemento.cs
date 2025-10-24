@@ -1,5 +1,4 @@
-﻿using JovemProgramadorWeb.Models;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
 using JovenProgramadorWed.Models;
 
@@ -12,7 +11,7 @@ namespace JovemProgramadorWeb.Data.Mapeamento
         {
             builder.ToTable("Aluno");
 
-            builder.HasKey(t => t.Codigo);
+            builder.HasKey(t => t.Id);
 
             builder.Property(t => t.Nome).HasColumnType("varchar(50)");
             builder.Property(t => t.Matricula).HasColumnType("varchar(50)");

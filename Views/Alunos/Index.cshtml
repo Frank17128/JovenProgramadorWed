@@ -19,12 +19,12 @@
 					<td>@aluno.Matricula </td>
 					<td>@aluno.Nome </td>
 					<td>@aluno.Cpf </td>
-					<td>@aluno.DataNascimento.ToShortDateString()</td>
+					<td>@aluno.DataNascimento</td>
 				    <td>
 				
 					    <div class="d-grid gap-2 d-md-block">
-                            <a type="submit" class="btn btn-primary" role="button" asp-controller="Aluno" asp-action="Editar" asp-route-id="@aluno.Codigo" >Editar</a>
-                            <a type="submit" class="btn btn-primary" role="button" asp-controller="Aluno" asp-action="Excluir" asp-route-id="@aluno.Codigo">Excluir</a>
+                            <a type="submit" class="btn btn-primary" role="button" asp-controller="Aluno" asp-action="Editar" asp-route-id="@aluno.Id" >Editar</a>
+                            <a type="submit" class="btn btn-primary" role="button" asp-controller="Aluno" asp-action="ExcluirAluno" asp-route-id="@aluno.Id">Excluir</a>
                         </div>
                     </td>
 				</tr>
@@ -37,4 +37,12 @@
 <div class="text-center mt-3">
 	<a class="btn btn-success" asp-controller="Aluno" asp-action="AdicionarAluno">Adicionar Aluno</a>
 	<a class="btn btn-secondary" asp-controller="Home" asp-action="Index">Voltar</a>
+</div>
+
+<div>
+	<form method="get" asp-controller="Aluno" asp-action="Index">
+		<input type="text" name="buscar" placeholder="Buscar aluno..." class="form-control" style="width:300px; display:inline-block;" />
+		<button type="submit" class="btn btn-primary">Pesquisar</button>
+	</form>
+
 </div>

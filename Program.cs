@@ -2,6 +2,7 @@ using JovenProgramadorWed.Data.Mapiamento.Repositorio.Interfaces;
 using JovenProgramadorWed.Data.Mapiamento.Repositorio;
 using JovenProgramadorWed.Data;
 using Microsoft.EntityFrameworkCore;
+using JovenProgramadorWed.Data.Mapeamento.Repositorio.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,7 +14,12 @@ builder.Services.AddDbContext<BancoContexto>(options => options.UseSqlServer(con
 
 
 builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
+
 builder.Services.AddScoped<IAlunoRepositorio, AlunoRepositorio>();
+
+builder.Services.AddHttpContextAccessor();
+
+builder.Services.AddSession();
 
 
 var app = builder.Build();

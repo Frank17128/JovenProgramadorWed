@@ -1,4 +1,5 @@
-﻿using JovenProgramadorWed.Data.Mapiamento;
+﻿using JovemProgramadorWeb.Data.Mapeamento;
+using JovenProgramadorWed.Data.Mapiamento;
 using JovenProgramadorWed.Models;
 using Microsoft.EntityFrameworkCore;
 

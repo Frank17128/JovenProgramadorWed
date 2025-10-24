@@ -1,5 +1,61 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    Layout = "_LayoutLogin";
 }
+
+@model Aluno
+
+<form asp-controller="Aluno" asp-action="EditarAluno" method="post">
+
+    <input type="hidden" asp-for="Id"/>
+
+    <div class="mb-3 col-md-4">
+        <label class="form-label">Nome</label>
+        <input type="text" asp-for="Nome" class="form-control">
+    </div>
+
+    <div class="mb-3 col-md-2">
+        <label class="form-label">Matricula</label>
+        <input type="text" asp-for="Matricula" class="form-control ">
+    </div>
+
+    <div class="mb-3 col-md-2">
+        <label class="form-label">Data Nascimento</label>
+        <input type="text" asp-for="DataNascimento" class="form-control ">
+    </div>
+
+    <div class="mb-3 col-md-2">
+        <label class="form-label">Cpf</label>
+        <input type="text" asp-for="Cpf" class="form-control ">
+    </div>
+
+    <div class="mb-3 col-md-2">
+        <label class="form-label">Cep</label>
+        <input type="text" asp-for="Cep" class="form-control" id="Cep">
+    </div>
+
+    <div class="mb-3 col-md-2">
+        <label class="form-label">Endereco</label>
+        <input type="text" asp-for="Endereco" class="form-control" id="Endereco">
+    </div>
+
+    <div class="mb-3 col-md-2">
+        <label class="form-label">Bairro</label>
+        <input type="text" asp-for="Bairro" class="form-control" id="Bairro">
+    </div>
+
+    <div class="mb-3 col-md-2">
+        <label class="form-label">Cidade</label>
+        <input type="text" asp-for="Cidade" class="form-control" id="Cidade">
+    </div>
+
+    <div class="mb-3 col-md-2">
+        <label class="form-label">Numero</label>
+        <input type="text" asp-for="Numero" class="form-control ">
+    </div>
+    <div class="text-center">
+        <button type="submit" class="btn btn-primary">Salvar</button>
+        <a class="btn btn-primary" type="button" asp-controller="Aluno" asp-action="Index"> Voltar</a>
+    </div>
+</form>
+
+
